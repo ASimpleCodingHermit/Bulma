@@ -15,26 +15,67 @@
     crossorigin="anonymous" />
   <!-- styling to be transferred to another page -->
   <style>
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: [xl-start] 1fr 1.5rem [md-start] minmax(0, 624px) [md-end] 1.5rem 1fr [xl-end];
     }
 
     .grid * {
-      grid-column: 2/3;
+      grid-column: md;
+    }
+
+    .grid-xl {
+      grid-column: xl;
+    }
+
+    .is-paddingless-horizontal {
+      padding-left: 0;
+      padding-right: 0;
     }
   </style>
 </head>
 
 <body>
-  <section class="section">
-    <div class="container">
+  <section class="section is-paddingless-horizontal">
+    <div class="container grid">
       <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
           <li><a href="#">Home</a></li>
           <li class="is-active"><a href="#" aria-current="page">How to build a beautiful blog</a></li>
         </ul>
       </nav>
+    </div>
+  </section>
+  <!-- Second Section area -->
+  <section class="section is-paddingless-horizontal" style="padding-top:0">
+    <div class="container grid">
+      <!-- Media Start -->
+      <article class="media center">
+        <figure class="media-left">
+          <figure class="image is-64x64">
+            <img src="https://bulma.io/images/placeholders/64x64.png">
+          </figure>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Joseph Chu</strong>
+              <a href="#">@hermit_code</a><br>
+              <span class="has-text-grey">Self taught, inspired to learn <br>
+                <time datetime="11/13/2020">Nov 20</time> · 20 min read
+              </span>
+            </p>
+          </div>
+        </div>
+      </article>
+      <!-- Media End -->
+      
     </div>
   </section>
 </body>
